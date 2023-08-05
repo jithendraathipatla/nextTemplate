@@ -1,7 +1,7 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import Footer from '../components/Footer.js'
+import RightSideForm from '@/components/RightSideForm'
 
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -11,7 +11,25 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body >
+      <div className="mainclasss">
+        <div>{children}</div>
+        <div>  <RightSideForm/></div>
+        <style>
+          {`
+            .mainclasss{
+              display: grid;
+              grid-template-columns: 7fr 5fr;
+              padding: 20px 30px;
+            }
+          `}
+        </style>
+      </div>
+      
+     
+      <br/>
+      <Footer/>
+      </body>
     </html>
   )
 }
