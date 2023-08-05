@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
           {`
             .mainclasss{
               display: grid;
-              grid-template-columns: 7fr 5fr;
+              grid-template-columns: 9.5fr 4.5fr;
               padding: 20px 30px;
             }
           `}

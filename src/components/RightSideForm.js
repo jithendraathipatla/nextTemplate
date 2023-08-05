@@ -5,15 +5,16 @@ import { CiCalendarDate } from 'react-icons/ci'
 import { MdOutlineHomeWork } from 'react-icons/md'
 import { PiGitDiffFill } from 'react-icons/pi'
 import { RxDimensions } from 'react-icons/rx'
-import { SiVirustotal } from 'react-icons/si'
+import { TiSortNumericallyOutline } from 'react-icons/Ti'
 import { HiOutlineCurrencyRupee } from 'react-icons/hi'
 import { BiBed } from 'react-icons/bi'
+import StickyForm from './StickyForm'
 
 const RightSideForm = () => {
     const data = [
         {
             logo: <GiIsland />,
-            key: "Land Area",
+            key: "Total Area",
             value: "11 Acres"
         },
         {
@@ -37,8 +38,8 @@ const RightSideForm = () => {
             value: "675 - 1,760 Sqft"
         },
         {
-            logo: <SiVirustotal />,
-            key: "Total Units",
+            logo: <TiSortNumericallyOutline />,
+            key: "Number of Units",
             value: "940"
         },
         {
@@ -48,30 +49,31 @@ const RightSideForm = () => {
         },
         {
             logo: <BiBed />,
-            key: "Unit Typology",
+            key: "Units in Typology",
             value: "1.5, 2, 3 & 3.5 BHK"
         },
     ]
     const first = () => {
         const one = data.map((i) => {
             return (
-                <div key={i} style={{ backgroundColor: "hsla(190, 72%, 50%, 0.1)", margin: "10px", textAlign: "center" }}>
+                <div key={i} style={{ backgroundColor: "hsla(190, 72%, 50%, 0.1)", margin: "5px", textAlign: "center" }}>
                     <div className="firstsub">
                         <span>{i.logo}</span>
                         <span>{i.key}</span>
                     </div>
-                    <>{i.value}</>
+                    <span style={{fontSize:"0.9rem", marginTop:"-20px"}}>{i.value}</span>
                     <style>
                         {`
                      .firstsub{
                         display: flex;
-                        justify-content: space-evenly;
                         padding: 10px 15px;
                         text-align: center; 
-                        font-size: 1.5rem;
+                        font-size: 1rem;
+                        margin-bottom: -15px;
                     }
                     svg{
-                        font-size: 2rem;
+                        font-size: 1.5rem;
+                        margin: 0px 15px;
                     }
                     `}
                     </style>
@@ -86,13 +88,17 @@ const RightSideForm = () => {
             <div className="firstdiv">
                 {first()}
             </div>
-
+            <br/>
+            <>
+             <StickyForm/>
+            </>
 
             <style jsx>
                 {`
         .firstdiv{
             display: grid;
             grid-template-columns: 6fr 6fr;
+            text-align: center;
         },
         
         `}
